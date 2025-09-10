@@ -4,7 +4,7 @@ Simple project to fetch users from a public API and save them into a CSV file us
 
 ## What the project does
 
-1. Fetches a list of users from [https://api.github.com/users](https://api.github.com/users)
+1. Fetches a list of users from GitHub public API [https://api.github.com/users](https://api.github.com/users)
 2. Saves the data to a CSV file (ID, Name, URL)
 3. Executes tasks asynchronously using Celery
 4. Redis as a message broker
