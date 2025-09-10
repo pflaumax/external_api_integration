@@ -38,15 +38,18 @@ cd external_api_integration
 ```bash
 docker compose up --build
 ```
-
+For runs after build, you can simply start containers in detached mode:
+```bash
+docker compose up -d
+```
 ### 3. Check that everything works
 
-Open a browser and go to [http://localhost:8000](http://localhost:8000)
+Open a browser and go to [http://localhost:8000/check_status](http://localhost:8000/check_status)
 
 And main page showing:
 
 ```json
-{"message":"Welcome to the external Github API integration"}
+{"status":"OK"}
 ```
 
 ## How to use
@@ -59,7 +62,7 @@ Send a POST request to `/fetch_users` by:
 curl -X POST http://localhost:8000/fetch_users
 ```
 
-Or open [http://localhost:8000/docs](http://localhost:8000/docs) and use `Try it out` and `Execute`.
+Or open [http://localhost:8000/docs](http://localhost:8000/docs) Fetch Users and use `Try it out` and `Execute`.
 
 ### Result
 

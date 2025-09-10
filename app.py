@@ -20,6 +20,6 @@ def fetch_users():
     }
 
 @app.get("/check_status")
-def status_check():
+def check_status():
     """Check status that endpoint is started and running"""
     return {"status": "OK"}
