@@ -66,6 +66,11 @@ Or open [http://localhost:8000/docs](http://localhost:8000/docs) Fetch Users and
 
 ### Result
 
+`Curl` query response with:
+```bash
+{"message":"GitHub users fetch task started","task_id":<task id>,"status":"Task added to queue"}
+```
+
 After the task is completed, a CSV file will appear in the `github_users/` folder named like `github_users_20250910_130828.csv` with time stamp and containing data:
 
 ```csv
@@ -84,8 +89,31 @@ ID,Name,URL
 * `GET /docs` - Documentation Swagger UI
 * `GET/redoc` - Documentation ReDoc
 
+## Logs
+
+```bash
+  docker compose fastapi
+```
+
+```bash
+  docker compose celery
+```
+
+```bash
+  docker compose redis
+```
+
+
 ## Stop the project
 
 ```bash
 docker compose down
 ```
+
+## Feature Improvements
+
+* Data validation - add pydantic models for validation
+* Advanced logging - structured logging with different log levels
+* Monitoring - add flower for celery task monitoring
+* Testing - unit tests with pytest
+* Database storage - store results in postgreSQL or mongoDB
